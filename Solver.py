@@ -14,7 +14,7 @@ mapa = [
     [9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 ]
-soluciones=[23468]
+soluciones=[2468]
 resuelto= [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -104,14 +104,16 @@ def explorar(mapa, soluciones):
                     result = check(mapa, solucion, i, j)
 
 
+def mostrar():
+    colorama.init()
+
+    for row in resuelto:
+        for num in row:
+            if num >= 1:
+                print(Fore.RED + str(num) + Style.RESET_ALL, end='  ')
+            else:
+                print(num, end='  ')
+        print()
 
 explorar(mapa, soluciones)
-colorama.init()
-
-for row in resuelto:
-    for num in row:
-        if num >= 1:
-            print(Fore.RED + str(num) + Style.RESET_ALL, end='  ')
-        else:
-            print(num, end='  ')
-    print()
+mostrar()
