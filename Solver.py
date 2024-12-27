@@ -104,16 +104,14 @@ def explorar(mapa, soluciones):
                     result = check(mapa, solucion, i, j)
 
 
-def mostrar():
-    colorama.init()
-
-    for row in resuelto:
-        for num in row:
-            if num >= 1:
-                print(Fore.RED + str(num) + Style.RESET_ALL, end='  ')
-            else:
-                print(num, end='  ')
-        print()
 
 explorar(mapa, soluciones)
-mostrar()
+colorama.init()
+
+for row in resuelto:
+    for num in row:
+        if num >= 1:
+            print(Fore.RED + str(num) + Style.RESET_ALL, end='  ')
+        else:
+            print(num, end='  ')
+    print()
